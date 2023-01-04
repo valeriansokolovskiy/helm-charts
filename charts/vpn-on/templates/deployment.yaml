@@ -28,7 +28,7 @@ spec:
           - containerPort: {{ .Values.deployment.port }}
           volumeMounts:
             - name: {{ .Values.deployment.volume_name }}
-              mountPath: {{ .Values.deployment.mount_path }}
+              mountPath: /mnt/app/vpn_config
       volumes:
         - name: {{ .Values.deployment.volume_name }}
           persistentVolumeClaim:
