@@ -7,7 +7,7 @@ deployment:
   memory_limit: 200Mi
   cpu_request: 100m
   memory_request: 200Mi
-  volume_name: 
+  volume_name: vpn-dev-volume
 
 service:
   name: vpn-on
