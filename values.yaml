@@ -1,0 +1,34 @@
+deployment:
+  name: vpn-on
+  replicaCount: 1
+  image: 632061044034.dkr.ecr.us-east-2.amazonaws.com/vpn-on:7
+  port: 5000
+  cpu_limit: 100m
+  memory_limit: 200Mi
+  cpu_request: 100m
+  memory_request: 200Mi
+  volume_name: vpn-dev-volume
+
+service:
+  name: vpn-on
+  port: 80
+  protocol: TCP
+  type: ClusterIP
+
+cronjob:
+  name: file-creator
+  schedule: '*/5 * * * *'
+
+StorageClass:
+  name:  vpn-dev-storage-class
+  provisioner_name: efs.csi.aws.com
+
+PersistentVolume:
+  name: vpn-dev-persistent-volume
+  size: 2Gi
+  efs_id: fs-0a0af6914362524c7
+
+PersistentVolumeClaim:
+  name: vpn-dev-volume-claim
+
+
