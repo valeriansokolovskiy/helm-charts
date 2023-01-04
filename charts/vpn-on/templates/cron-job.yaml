@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Values.cronjob.name }}
+spec:
+  schedule: "{{ .Values.cronjob.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: {{ .Values.cronjob.name }}
+            image: busybox
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - touch /mnt/conf || exit && ls /mnt
+            volumeMounts:
+               - name: {{ .Values.deployment.volume_name }}
+                 mountPath: /mnt
+          restartPolicy: OnFailure  
+          volumes:
+            - name: {{ .Values.deployment.volume_name }}
+              persistentVolumeClaim:
+                claimName: {{ .Values.PersistentVolumeClaim.name }}
+
+#test
+

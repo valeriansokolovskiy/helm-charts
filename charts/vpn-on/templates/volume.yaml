@@ -1,0 +1,34 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: {{ .Values.StorageClass.name }}
+provisioner: {{ .Values.StorageClass.provisioner_name }} 
+volumeBindingMode: WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Values.PersistentVolume.name }}
+spec:
+  capacity:
+    storage: {{ .Values.PersistentVolume.size }}
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: {{ .Values.StorageClass.name }}
+  csi:
+    driver: {{ .Values.StorageClass.provisioner_name }}
+    volumeHandle: {{ .Values.PersistentVolume.efs_id }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.PersistentVolumeClaim.name }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName:  {{ .Values.StorageClass.name }}
+  resources:
+    requests:
+      storage: {{ .Values.PersistentVolume.size }}
