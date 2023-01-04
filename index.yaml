@@ -3,16 +3,16 @@ entries:
   vpn-on:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-01-04T17:28:44.501867+01:00"
+    created: "2023-01-04T18:13:06.449542+01:00"
     description: A Helm chart for Kubernetes
-    digest: 830dbba6af503411a3eea1c26ed3b6b5301112832a6523a6b29ae36322da492e
+    digest: 502caa22232d3e3be42aa255b9599f0598d2942e039e954fd536772a07f16093
     name: vpn-on
     urls:
     - https://valeriansokolovskiy.github.io/helm-charts/vpn-on-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-01-04T17:28:44.501206+01:00"
+    created: "2023-01-04T18:13:06.449189+01:00"
     description: A Helm chart for Kubernetes
     digest: a29a160691d98a336b867dbd3e41d6945613348455cc28f043a8e0fe63a623de
     name: vpn-on
@@ -21,7 +21,7 @@ entries:
     version: 0.0.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-01-04T17:28:44.499082+01:00"
+    created: "2023-01-04T18:13:06.448561+01:00"
     description: A Helm chart for Kubernetes
     digest: 1f8f00ca524ed0bbdba97e1099394251fb039899e65a4a9127aa55c7133633da
     name: vpn-on
@@ -30,11 +30,11 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-01-04T17:28:44.498258+01:00"
+    created: "2023-01-04T18:13:06.447772+01:00"
     description: A Helm chart for Kubernetes
     digest: 0d2147d195c7d5504d0451c033915ce2595b786a3e0caaa53d5200acb43d50a9
     name: vpn-on
     urls:
     - https://valeriansokolovskiy.github.io/helm-charts/vpn-on-0.0.1.tgz
     version: 0.0.1
-generated: "2023-01-04T17:28:44.496291+01:00"
+generated: "2023-01-04T18:13:06.446909+01:00"

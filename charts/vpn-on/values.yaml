@@ -1,7 +1,7 @@
 deployment:
   name: vpn-on
   replicaCount: 1
-  repository: 632061044034.dkr.ecr.us-east-2.amazonaws.com/vpn-on:7
+  image: 632061044034.dkr.ecr.us-east-2.amazonaws.com/vpn-on:7
   port: 5000
   cpu_limit: 100m
   memory_limit: 200Mi
